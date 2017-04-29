@@ -32,7 +32,8 @@ def read_loans(loans):
         reader = csv.reader(f)
         header = next(reader)
         for row in reader:
-            parse_row(row)
+            if row[0] != 'missing':
+                parse_row(row)
     finally:
         f.close()
 
