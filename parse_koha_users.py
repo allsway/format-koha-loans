@@ -11,6 +11,7 @@ def get_user_id(row):
     second = row[0].strip()
     return first_init + second
 
+# returns current date in correct format for offline circ file
 def get_date():
     day = datetime.datetime.today()
     return day.strftime('%Y%m%d%H%m')
@@ -37,5 +38,6 @@ def read_loans(loans):
     finally:
         f.close()
 
+# takes in csv export of Koha user loans
 loans = sys.argv[1]
 read_loans(loans)
